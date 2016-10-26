@@ -50,7 +50,17 @@ module.exports = {
     entry: {
         app: [
             'webpack-dev-server/client?http://localhost:5000',
-            'sampleapp/main'
+            'src/main'
+        ],
+        vendor: [
+            'es6-shim',
+            'reflect-metadata',
+            '@angular/common',
+            '@angular/core',
+            '@angular/platform-browser',
+            '@angular/platform-browser-dynamic',
+            'rxjs',
+            'zone.js'
         ]
     },
 
@@ -62,7 +72,7 @@ module.exports = {
             filename: 'index.html',
             hash: true,
             inject: 'body',
-            template: './sampleapp/index.html'
+            template: './src/index.html'
         }),
         new LiveReloadPlugin({
             appendScriptTag: true
@@ -82,7 +92,7 @@ module.exports = {
     },
 
     devServer: {
-        contentBase: ['./src', './sampleapp'],
+        contentBase: './src',
         historyApiFallback: true,
         port: 5000,
         publicPath: '/',
