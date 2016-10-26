@@ -225,7 +225,7 @@ export class MyDatePicker implements OnChanges {
           break;
       }
 
-      if (mustRefresh === true && selectedDate < disableUntil && selectedDate > disableSince) {
+      if (mustRefresh === true && selectedDate > disableUntil && selectedDate < disableSince) {
         this.selectedDate = {
           day: selectedDate.getDate(),
           month: selectedDate.getMonth() + 1,
