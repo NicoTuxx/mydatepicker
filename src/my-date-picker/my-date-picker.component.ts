@@ -209,13 +209,16 @@ export class MyDatePicker implements OnChanges {
           this.selectedDate = {day: selectedDate.getDate(), month: selectedDate.getMonth() + 1, year: selectedDate.getFullYear()};
           break;
         case 'ArrowRight':
-          console.log('right');
+          selectedDate.setDate(selectedDate.getDate() + 1);
+          this.selectedDate = {day: selectedDate.getDate(), month: selectedDate.getMonth() + 1, year: selectedDate.getFullYear()};
           break;
         case 'ArrowUp':
-          console.log('up');
+          selectedDate.setDate(selectedDate.getDate() - 7);
+          this.selectedDate = {day: selectedDate.getDate(), month: selectedDate.getMonth() + 1, year: selectedDate.getFullYear()};
           break;
         case 'ArrowDown':
-          console.log('down');
+          selectedDate.setDate(selectedDate.getDate() + 7);
+          this.selectedDate = {day: selectedDate.getDate(), month: selectedDate.getMonth() + 1, year: selectedDate.getFullYear()};
           break;
         default:
           console.log('some key');
