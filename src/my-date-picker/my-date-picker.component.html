@@ -2,7 +2,7 @@
     <div class="selectiongroup" *ngIf="!inline">
         <input type="text" class="selection" maxlength="10" [ngClass]="{'invaliddate': invalidDate&&indicateInvalidDate}" placeholder="{{showDateFormatPlaceholder?dateFormat:''}}"
                 [ngStyle]="{'height': height, 'line-height': height, 'font-size': selectionTxtFontSize, 'border': 'none', 'padding-right': selectionDayTxt.length>0 ? '60px' : '30px'}"
-                (keyup)="userDateInput($event)" [value]="selectionDayTxt">
+                (keyup)="userDateInput($event)" [value]="selectionDayTxt" (input)="selectionDayTxt = $event.target.value">
         <span class="selbtngroup" [style.height]="height">
             <button type="button" class="btnclear" *ngIf="selectionDayTxt.length>0" (click)="removeBtnClicked()">
                 <span class="icon icon-cross" [ngStyle]="{'line-height': height}"></span>
