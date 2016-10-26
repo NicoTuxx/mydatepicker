@@ -428,6 +428,7 @@ export class MyDatePicker implements OnChanges {
     }
 
     generateCalendar(m:number, y:number): void {
+      console.log('tatatata');
         this.dates.length = 0;
         let monthStart = this.monthStartIdx(y, m);
         let dInThisM = this.daysInMonth(m, y);
