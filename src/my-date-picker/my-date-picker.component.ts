@@ -1,4 +1,4 @@
-import {Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, ElementRef, ViewEncapsulation, Renderer, ViewChild} from '@angular/core';
+import {Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, ElementRef, ViewEncapsulation, Renderer} from '@angular/core';
 import {IMyDate, IMyMonth, IMyWeek, IMyDayLabels, IMyMonthLabels} from './interfaces/index';
 import {LocaleService} from './services/my-date-picker.locale.service';
 import {ValidatorService} from './services/my-date-picker.validator.service';
@@ -23,7 +23,6 @@ export class MyDatePicker implements OnChanges {
     @Input() defaultMonth:string;
     @Input() selDate:string;
     @Output() dateChanged:EventEmitter<Object> = new EventEmitter();
-    @ViewChild('calendarElt') calendarElt:any;
 
     showSelector: boolean = false;
     visibleMonth: IMyMonth = {monthTxt: '', monthNbr: 0, year: 0};
@@ -290,8 +289,7 @@ export class MyDatePicker implements OnChanges {
 
             // Create current month
             this.generateCalendar(m, y);
-            console.log(this.calendarElt);
-            this.calendarElt.nativeElement.focus();
+            this.renderer.invokeElementMethod(this.elem.nativeElement.querySelector('.selector'), 'focus', []);
         }
     }
 
