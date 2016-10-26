@@ -195,7 +195,7 @@ export class MyDatePicker implements OnChanges {
       event.preventDefault();
       switch (event.code) {
         case 'Escape':
-          console.log('esc');
+          this.openBtnClicked();
           break;
         case 'Enter':
           console.log('enter');
