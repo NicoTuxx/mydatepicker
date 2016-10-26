@@ -191,8 +191,6 @@ export class MyDatePicker implements OnChanges {
     }
 
     userCalendar(event:any):void {
-      event.stopPropagation();
-      event.preventDefault();
       let d = (this.selectedDate.day === 0) ? this.today.getDate() : this.selectedDate.day;
       let m = (this.selectedDate.month === 0) ? this.today.getMonth() : this.selectedDate.month - 1;
       let y = (this.selectedDate.year === 0) ? this.today.getFullYear() : this.selectedDate.year;
