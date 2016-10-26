@@ -55,9 +55,7 @@ export class MyDatePicker implements OnChanges {
     width: string = '100%';
     selectionTxtFontSize: string = '18px';
     disableUntil: IMyDate = {year: 0, month: 0, day: 0};
-    minAttribute: string = '';
     disableSince: IMyDate = {year: 0, month: 0, day: 0};
-    maxAttribute: string = '';
     disableWeekends: boolean = false;
     inline: boolean = false;
     alignSelectorRight: boolean = false;
@@ -109,16 +107,6 @@ export class MyDatePicker implements OnChanges {
         }
         if(this.maxYear > 9999) {
             this.minYear = 9999;
-        }
-        if (this.options['disableUntil'] !== undefined) {
-          let minDate = new Date(this.disableUntil.year, this.disableUntil.month, this.disableUntil.day);
-          minDate.setDate(minDate.getDate());
-          this.minAttribute = minDate.getFullYear() + '-' + this.preZero(minDate.getMonth().toString()) + '-' + this.preZero(minDate.getDate().toString());
-        }
-        if (this.options['disableSince'] !== undefined) {
-          let maxDate = new Date(this.disableSince.year, this.disableSince.month, this.disableSince.day);
-          maxDate.setDate(maxDate.getDate() - 1);
-          this.maxAttribute = maxDate.getFullYear() + '-' + this.preZero(maxDate.getMonth().toString()) + '-' + this.preZero(maxDate.getDate().toString());
         }
     }
 
