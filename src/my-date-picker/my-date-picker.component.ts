@@ -195,6 +195,7 @@ export class MyDatePicker implements OnChanges {
       let m = (this.selectedDate.month === 0) ? this.today.getMonth() : this.selectedDate.month - 1;
       let y = (this.selectedDate.year === 0) ? this.today.getFullYear() : this.selectedDate.year;
       let selectedDate: Date = new Date(y, m, d);
+      let mustRefresh = false;
       switch (event.code) {
         case 'Escape':
           this.openBtnClicked();
@@ -203,32 +204,29 @@ export class MyDatePicker implements OnChanges {
           this.selectDate({day: d, month: m + 1, year: y});
           break;
         case 'ArrowLeft':
+          mustRefresh = true;
           selectedDate.setDate(selectedDate.getDate() - 1);
-          this.selectedDate = {day: selectedDate.getDate(), month: selectedDate.getMonth() + 1, year: selectedDate.getFullYear()};
-          this.visibleMonth = {monthTxt: this.monthLabels[selectedDate.getMonth() + 1], monthNbr: selectedDate.getMonth() + 1, year: selectedDate.getFullYear()};
-          this.generateCalendar(selectedDate.getMonth() + 1, selectedDate.getFullYear());
           break;
         case 'ArrowRight':
+          mustRefresh = true;
           selectedDate.setDate(selectedDate.getDate() + 1);
-          this.selectedDate = {day: selectedDate.getDate(), month: selectedDate.getMonth() + 1, year: selectedDate.getFullYear()};
-          this.visibleMonth = {monthTxt: this.monthLabels[selectedDate.getMonth() + 1], monthNbr: selectedDate.getMonth() + 1, year: selectedDate.getFullYear()};
-          this.generateCalendar(selectedDate.getMonth() + 1, selectedDate.getFullYear());
           break;
         case 'ArrowUp':
+          mustRefresh = true;
           selectedDate.setDate(selectedDate.getDate() - 7);
-          this.selectedDate = {day: selectedDate.getDate(), month: selectedDate.getMonth() + 1, year: selectedDate.getFullYear()};
-          this.visibleMonth = {monthTxt: this.monthLabels[selectedDate.getMonth() + 1], monthNbr: selectedDate.getMonth() + 1, year: selectedDate.getFullYear()};
-          this.generateCalendar(selectedDate.getMonth() + 1, selectedDate.getFullYear());
           break;
         case 'ArrowDown':
+          mustRefresh = true;
           selectedDate.setDate(selectedDate.getDate() + 7);
-          this.selectedDate = {day: selectedDate.getDate(), month: selectedDate.getMonth() + 1, year: selectedDate.getFullYear()};
-          this.visibleMonth = {monthTxt: this.monthLabels[selectedDate.getMonth() + 1], monthNbr: selectedDate.getMonth() + 1, year: selectedDate.getFullYear()};
-          this.generateCalendar(selectedDate.getMonth() + 1, selectedDate.getFullYear());
           break;
         default:
-          console.log('some key');
           break;
+      }
+
+      if (mustRefresh === true) {
+        this.selectedDate = {day: selectedDate.getDate(), month: selectedDate.getMonth() + 1, year: selectedDate.getFullYear()};
+        this.visibleMonth = {monthTxt: this.monthLabels[selectedDate.getMonth() + 1], monthNbr: selectedDate.getMonth() + 1, year: selectedDate.getFullYear()};
+        this.generateCalendar(selectedDate.getMonth() + 1, selectedDate.getFullYear());
       }
     }
 
