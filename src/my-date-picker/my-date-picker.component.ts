@@ -111,10 +111,14 @@ export class MyDatePicker implements OnChanges {
             this.minYear = 9999;
         }
         if (this.options['disableUntil'] !== undefined) {
-          this.minAttribute = this.formatDate(this.disableUntil, 'yyyy-mm-dd');
+          let minDate = new Date(this.disableUntil.year, this.disableUntil.month + 1, this.disableUntil.day);
+          minDate.setDate(minDate.getDate() + 1);
+          this.minAttribute = minDate.getFullYear() + '-' + this.preZero(minDate.getMonth().toString()) + '-' + this.preZero(minDate.getDate().toString());
         }
         if (this.options['disableSince'] !== undefined) {
-          this.maxAttribute = this.formatDate(this.disableSince, 'yyyy-mm-dd');
+          let maxDate = new Date(this.disableSince.year, this.disableSince.month + 1, this.disableSince.day);
+          maxDate.setDate(maxDate.getDate() - 1);
+          this.maxAttribute = maxDate.getFullYear() + '-' + this.preZero(maxDate.getMonth().toString()) + '-' + this.preZero(maxDate.getDate().toString());
         }
     }
 
@@ -409,9 +413,8 @@ export class MyDatePicker implements OnChanges {
         return parseInt(val) < 10 ? '0' + val : val;
     }
 
-    formatDate(val:any, format?:string):string {
-        format = (format !== undefined) ? format : this.dateFormat;
-        return format.replace('yyyy', val.year)
+    formatDate(val:any):string {
+        return this.dateFormat.replace('yyyy', val.year)
             .replace('mm', this.preZero(val.month))
             .replace('dd', this.preZero(val.day));
     }
