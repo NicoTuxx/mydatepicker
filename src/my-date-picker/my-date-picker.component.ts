@@ -289,7 +289,8 @@ export class MyDatePicker implements OnChanges {
 
             // Create current month
             this.generateCalendar(m, y);
-            this.renderer.invokeElementMethod(this.elem.nativeElement.querySelector('.selector'), 'focus', []);
+            console.log(this.elem);
+            this.elem.nativeElement.querySelector('.selector').focus();
         }
     }
 
