@@ -198,13 +198,16 @@ export class MyDatePicker implements OnChanges {
           this.openBtnClicked();
           break;
         case 'Enter':
-          let d = (this.selectedDate.day === 0) ? this.today.getDay() : this.selectedDate.day;
+          let d = (this.selectedDate.day === 0) ? this.today.getDate() : this.selectedDate.day;
           let m = (this.selectedDate.month === 0) ? this.today.getMonth() + 1 : this.selectedDate.month;
           let y = (this.selectedDate.year === 0) ? this.today.getFullYear() : this.selectedDate.year;
           this.selectDate({day: d, month: m, year: y});
           break;
         case 'ArrowLeft':
-          console.log('left');
+          let d = (this.selectedDate.day === 0) ? this.today.getDate() : this.selectedDate.day;
+          let m = (this.selectedDate.month === 0) ? this.today.getMonth() + 1 : this.selectedDate.month;
+          let y = (this.selectedDate.year === 0) ? this.today.getFullYear() : this.selectedDate.year;
+          this.selectedDate = {day: d - 1, month: m, year: y};
           break;
         case 'ArrowRight':
           console.log('right');
