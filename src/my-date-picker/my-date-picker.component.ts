@@ -205,19 +205,22 @@ export class MyDatePicker implements OnChanges {
         case 'ArrowLeft':
           selectedDate.setDate(selectedDate.getDate() - 1);
           this.selectedDate = {day: selectedDate.getDate(), month: selectedDate.getMonth() + 1, year: selectedDate.getFullYear()};
-          this.selectedMonth = {monthTxt: this.monthLabels[selectedDate.getMonth() + 1], monthNbr: selectedDate.getMonth() + 1, year: selectedDate.getFullYear()};
+          this.visibleMonth = {monthTxt: this.monthLabels[selectedDate.getMonth() + 1], monthNbr: selectedDate.getMonth() + 1, year: selectedDate.getFullYear()};
           break;
         case 'ArrowRight':
           selectedDate.setDate(selectedDate.getDate() + 1);
           this.selectedDate = {day: selectedDate.getDate(), month: selectedDate.getMonth() + 1, year: selectedDate.getFullYear()};
+          this.visibleMonth = {monthTxt: this.monthLabels[selectedDate.getMonth() + 1], monthNbr: selectedDate.getMonth() + 1, year: selectedDate.getFullYear()};
           break;
         case 'ArrowUp':
           selectedDate.setDate(selectedDate.getDate() - 7);
           this.selectedDate = {day: selectedDate.getDate(), month: selectedDate.getMonth() + 1, year: selectedDate.getFullYear()};
+          this.visibleMonth = {monthTxt: this.monthLabels[selectedDate.getMonth() + 1], monthNbr: selectedDate.getMonth() + 1, year: selectedDate.getFullYear()};
           break;
         case 'ArrowDown':
           selectedDate.setDate(selectedDate.getDate() + 7);
           this.selectedDate = {day: selectedDate.getDate(), month: selectedDate.getMonth() + 1, year: selectedDate.getFullYear()};
+          this.visibleMonth = {monthTxt: this.monthLabels[selectedDate.getMonth() + 1], monthNbr: selectedDate.getMonth() + 1, year: selectedDate.getFullYear()};
           break;
         default:
           console.log('some key');
