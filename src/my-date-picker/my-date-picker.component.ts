@@ -401,8 +401,9 @@ export class MyDatePicker implements OnChanges {
         return parseInt(val) < 10 ? '0' + val : val;
     }
 
-    formatDate(val:any):string {
-        return this.dateFormat.replace('yyyy', val.year)
+    formatDate(val:any, format?:string):string {
+        format = (format !== undefined) ? format : this.dateFormat;
+        return format.replace('yyyy', val.year)
             .replace('mm', this.preZero(val.month))
             .replace('dd', this.preZero(val.day));
     }
