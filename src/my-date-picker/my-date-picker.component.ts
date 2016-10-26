@@ -143,15 +143,7 @@ export class MyDatePicker implements OnChanges {
             else {
                 this.invalidDate = true;
             }
-            this.checkDateInput(event);
         }
-    }
-
-    checkDateInput(event:any):void {
-      let dateInput = event.target.value;
-      if (dateInput.search(/^\d{2}$/) !== -1 || dateInput.search(/^\d{2}\/\d{2}$/) !== -1) {
-        this.selectionDayTxt = (event.code === 'Backspace') ? this.selectionDayTxt.substr(0, this.selectionDayTxt.length - 1) : this.selectionDayTxt + '/';
-      }
     }
 
     userMonthInput(event:any):void {
