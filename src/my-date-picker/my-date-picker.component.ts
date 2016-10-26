@@ -112,7 +112,7 @@ export class MyDatePicker implements OnChanges {
         }
         if (this.options['disableUntil'] !== undefined) {
           let minDate = new Date(this.disableUntil.year, this.disableUntil.month, this.disableUntil.day);
-          minDate.setDate(minDate.getDate() + 1);
+          minDate.setDate(minDate.getDate());
           this.minAttribute = minDate.getFullYear() + '-' + this.preZero(minDate.getMonth().toString()) + '-' + this.preZero(minDate.getDate().toString());
         }
         if (this.options['disableSince'] !== undefined) {
