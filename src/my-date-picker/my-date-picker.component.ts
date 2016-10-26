@@ -195,6 +195,8 @@ export class MyDatePicker implements OnChanges {
       let m = (this.selectedDate.month === 0) ? this.today.getMonth() : this.selectedDate.month - 1;
       let y = (this.selectedDate.year === 0) ? this.today.getFullYear() : this.selectedDate.year;
       let selectedDate: Date = new Date(y, m, d);
+      let disableUntil = new Date(this.disableUntil.year, this.disableUntil.month - 1, this.disableUntil.day);
+      let disableSince = new Date(this.disableSince.year, this.disableSince.month - 1, this.disableSince.day);
       let mustRefresh = false;
       switch (event.code) {
         case 'Escape':
@@ -223,9 +225,17 @@ export class MyDatePicker implements OnChanges {
           break;
       }
 
-      if (mustRefresh === true) {
-        this.selectedDate = {day: selectedDate.getDate(), month: selectedDate.getMonth() + 1, year: selectedDate.getFullYear()};
-        this.visibleMonth = {monthTxt: this.monthLabels[selectedDate.getMonth() + 1], monthNbr: selectedDate.getMonth() + 1, year: selectedDate.getFullYear()};
+      if (mustRefresh === true && selectedDate < disableUntil && selectedDate > disableSince) {
+        this.selectedDate = {
+          day: selectedDate.getDate(),
+          month: selectedDate.getMonth() + 1,
+          year: selectedDate.getFullYear()
+        };
+        this.visibleMonth = {
+          monthTxt: this.monthLabels[selectedDate.getMonth() + 1],
+          monthNbr: selectedDate.getMonth() + 1,
+          year: selectedDate.getFullYear()
+        };
         this.generateCalendar(selectedDate.getMonth() + 1, selectedDate.getFullYear());
       }
     }
