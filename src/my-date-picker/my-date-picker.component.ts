@@ -191,6 +191,7 @@ export class MyDatePicker implements OnChanges {
     }
 
     userCalendar(event:any):void {
+      console.log('userCalendar');
       switch (event.code) {
         case 'Escape':
           console.log('esc');
