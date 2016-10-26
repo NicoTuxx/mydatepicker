@@ -12,7 +12,7 @@
             </button>
         </span>
     </div>
-    <div class="selector" *ngIf="showSelector||inline" [ngClass]="{'inlinedp': inline, 'alignselectorright': alignSelectorRight}">
+    <div class="selector" *ngIf="showSelector||inline" [ngClass]="{'inlinedp': inline, 'alignselectorright': alignSelectorRight}" (keyup)="userCalendar">
         <table class="header">
             <tr>
                 <td>

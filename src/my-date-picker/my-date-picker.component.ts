@@ -190,6 +190,32 @@ export class MyDatePicker implements OnChanges {
         }
     }
 
+    userCalendar(event:any):void {
+      switch (event.code) {
+        case 'Escape':
+          console.log('esc');
+          break;
+        case 'Enter':
+          console.log('enter');
+          break;
+        case 'ArrowLeft':
+          console.log('left');
+          break;
+        case 'ArrowRight':
+          console.log('right');
+          break;
+        case 'ArrowUp':
+          console.log('up');
+          break;
+        case 'ArrowDown':
+          console.log('down');
+          break;
+        default:
+          console.log('some key');
+          break;
+      }
+    }
+
     parseOptions():void {
         this.setOptions();
         if(this.locale) {
@@ -240,7 +266,6 @@ export class MyDatePicker implements OnChanges {
     }
 
     openBtnClicked():void {
-      console.log('totototo');
         this.showSelector = !this.showSelector;
 
         if (this.showSelector || this.inline) {
@@ -428,7 +453,6 @@ export class MyDatePicker implements OnChanges {
     }
 
     generateCalendar(m:number, y:number): void {
-      console.log('tatatata');
         this.dates.length = 0;
         let monthStart = this.monthStartIdx(y, m);
         let dInThisM = this.daysInMonth(m, y);
