@@ -240,6 +240,7 @@ export class MyDatePicker implements OnChanges {
     }
 
     openBtnClicked():void {
+      console.log('totototo');
         this.showSelector = !this.showSelector;
 
         if (this.showSelector || this.inline) {
