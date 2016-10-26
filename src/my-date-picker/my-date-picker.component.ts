@@ -22,7 +22,6 @@ export class MyDatePicker implements OnChanges {
     @Input() locale:string;
     @Input() defaultMonth:string;
     @Input() selDate:string;
-    @Input() calendarElt:any;
     @Output() dateChanged:EventEmitter<Object> = new EventEmitter();
 
     showSelector: boolean = false;
@@ -290,7 +289,7 @@ export class MyDatePicker implements OnChanges {
 
             // Create current month
             this.generateCalendar(m, y);
-            this.calendarElt.nativeElement.focus();
+            this.elem.nativeElement.focus();
         }
     }
 
