@@ -111,12 +111,12 @@ export class MyDatePicker implements OnChanges {
             this.minYear = 9999;
         }
         if (this.options['disableUntil'] !== undefined) {
-          let minDate = new Date(this.disableUntil.year, this.disableUntil.month + 1, this.disableUntil.day);
+          let minDate = new Date(this.disableUntil.year, this.disableUntil.month, this.disableUntil.day);
           minDate.setDate(minDate.getDate() + 1);
           this.minAttribute = minDate.getFullYear() + '-' + this.preZero(minDate.getMonth().toString()) + '-' + this.preZero(minDate.getDate().toString());
         }
         if (this.options['disableSince'] !== undefined) {
-          let maxDate = new Date(this.disableSince.year, this.disableSince.month + 1, this.disableSince.day);
+          let maxDate = new Date(this.disableSince.year, this.disableSince.month, this.disableSince.day);
           maxDate.setDate(maxDate.getDate() - 1);
           this.maxAttribute = maxDate.getFullYear() + '-' + this.preZero(maxDate.getMonth().toString()) + '-' + this.preZero(maxDate.getDate().toString());
         }
