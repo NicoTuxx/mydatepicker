@@ -291,7 +291,7 @@ export class MyDatePicker implements OnChanges {
             this.generateCalendar(m, y);
 
             let dayTable = this.elem.nativeElement.getElementsByClassName('daytable')[0];
-            console.log(dayTable);
+            console.log(this.elem.nativeElement.getElementsByClassName('daytable'));
             dayTable.focus();
         }
     }
