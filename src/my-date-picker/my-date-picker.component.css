@@ -1,6 +1,6 @@
 .mydp {
     min-width: 100px;
-    border-radius: 2px;
+    border-radius: 0;
     line-height: 1.1;
     display: inline-block;
     position: relative;
@@ -20,10 +20,11 @@
     margin-left: -1px;
     position: absolute;
     width: 262px;
-    padding: 3px;
-    border-radius: 2px;
-    background-color: #DDD;
+    padding: 0;
+    border-radius: 0;
+    background-color: #FFF;
     z-index: 100;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.35);
 }
 
 .mydp .alignselectorright {
@@ -92,7 +93,8 @@
     width: 100%;
     height: 36px;
     margin-bottom: 1px;
-    background-color: #FAFAFA;
+    background-color: #FFF;
+    border-width: 0 0 1px 0 !important;
 }
 
 .mydp .header td {
@@ -136,7 +138,7 @@
 }
 
 .mydp .caltable th {
-    background-color: #DDD;
+    background-color: #FFF;
     font-size: 12px;
     vertical-align: middle;
 }
@@ -172,7 +174,7 @@
 .mydp .disabled {
     cursor: default !important;
     color: #CCC !important;
-    background: #FFEBE6 !important;
+    background: #FFEFEB !important;
 }
 
 .mydp .sunday {
@@ -184,7 +186,7 @@
 }
 
 .mydp .currmonth {
-    background-color: #F6F6F6;
+    background-color: #F8F8F8;
     font-weight: bold;
 }
 
@@ -217,7 +219,7 @@
 .mydp .monthinput,
 .mydp .yearinput,
 .mydp .caltable tbody {
-    border: 1px solid #AAA;
+    border: 1px solid rgba(0,0,0,0.25);
 }
 
 .mydp .btnpicker,
@@ -232,7 +234,7 @@
 
 .mydp .headertodaybtn {
     padding: 0 4px;
-    border-radius: 2px;
+    border-radius: 0;
     cursor: pointer;
     font-size: 11px;
     min-width: 60px;
@@ -301,7 +303,7 @@
     text-align: center;
     font-weight: bold;
     outline: none;
-    border-radius: 2px;
+    border-radius: 0;
 }
 
 .mydp .headerbtn span:hover {
