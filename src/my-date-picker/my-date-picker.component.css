@@ -20,10 +20,11 @@
     margin-left: -1px;
     position: absolute;
     width: 262px;
-    padding: 3px;
+    padding: 5px;
     border-radius: 0;
     background-color: #FFF;
     z-index: 100;
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.5);
 }
 
 .mydp .alignselectorright {
