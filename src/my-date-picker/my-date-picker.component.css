@@ -174,7 +174,7 @@
 .mydp .disabled {
     cursor: default !important;
     color: #CCC !important;
-    background: #FFEBE6 !important;
+    background: #FFEFEB !important;
 }
 
 .mydp .sunday {
@@ -186,7 +186,7 @@
 }
 
 .mydp .currmonth {
-    background-color: #F6F6F6;
+    background-color: #F8F8F8;
     font-weight: bold;
 }
 
