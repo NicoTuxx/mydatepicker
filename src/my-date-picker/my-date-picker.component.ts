@@ -65,7 +65,6 @@ export class MyDatePicker implements OnChanges {
     minYear: number = 1000;
     maxYear: number = 9999;
     required: boolean = false;
-    calendarKeypress: boolean = false;
 
     constructor(public elem: ElementRef, private renderer: Renderer, private localeService: LocaleService, private validatorService: ValidatorService) {
         this.setLocaleOptions();
@@ -242,60 +241,6 @@ export class MyDatePicker implements OnChanges {
         };
         this.generateCalendar(selectedDate.getMonth() + 1, selectedDate.getFullYear());
       }
-    }
-
-    calendarKeyup(event:any):void {
-      event.preventDefault();
-      this.calendarKeypress = false;
-      console.log('keyup');
-      /*
-      let d = (this.selectedDate.day === 0) ? this.today.getDate() : this.selectedDate.day;
-      let m = (this.selectedDate.month === 0) ? this.today.getMonth() : this.selectedDate.month - 1;
-      let y = (this.selectedDate.year === 0) ? this.today.getFullYear() : this.selectedDate.year;
-      let selectedDate: Date = new Date(y, m, d);
-      let disableUntil = new Date(this.disableUntil.year, this.disableUntil.month - 1, this.disableUntil.day);
-      let disableSince = new Date(this.disableSince.year, this.disableSince.month - 1, this.disableSince.day);
-      let mustRefresh = false;
-      switch (event.code) {
-        case 'Escape':
-          this.openBtnClicked();
-          break;
-        case 'Enter':
-          this.selectDate({day: d, month: m + 1, year: y});
-          break;
-        case 'ArrowLeft':
-          mustRefresh = true;
-          selectedDate.setDate(selectedDate.getDate() - 1);
-          break;
-        case 'ArrowRight':
-          mustRefresh = true;
-          selectedDate.setDate(selectedDate.getDate() + 1);
-          break;
-        case 'ArrowUp':
-          mustRefresh = true;
-          selectedDate.setDate(selectedDate.getDate() - 7);
-          break;
-        case 'ArrowDown':
-          mustRefresh = true;
-          selectedDate.setDate(selectedDate.getDate() + 7);
-          break;
-        default:
-          break;
-      }
-
-      if (mustRefresh === true && selectedDate > disableUntil && selectedDate < disableSince) {
-        this.selectedDate = {
-          day: selectedDate.getDate(),
-          month: selectedDate.getMonth() + 1,
-          year: selectedDate.getFullYear()
-        };
-        this.visibleMonth = {
-          monthTxt: this.monthLabels[selectedDate.getMonth() + 1],
-          monthNbr: selectedDate.getMonth() + 1,
-          year: selectedDate.getFullYear()
-        };
-        this.generateCalendar(selectedDate.getMonth() + 1, selectedDate.getFullYear());
-      }*/
     }
 
     parseOptions():void {
