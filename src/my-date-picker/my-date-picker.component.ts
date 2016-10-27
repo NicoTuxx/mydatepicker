@@ -65,6 +65,7 @@ export class MyDatePicker implements OnChanges {
     minYear: number = 1000;
     maxYear: number = 9999;
     required: boolean = false;
+    calendarKeypress: boolean = false;
 
     constructor(public elem: ElementRef, private renderer: Renderer, private localeService: LocaleService, private validatorService: ValidatorService) {
         this.setLocaleOptions();
@@ -193,10 +194,17 @@ export class MyDatePicker implements OnChanges {
 
     calendarKeydown(event:any):void {
       event.preventDefault();
+
+      if (this.calendarKeypress) {
+        console.log('do some shit here !');
+      }
+      this.calendarKeypress = true;
     }
 
     calendarKeyup(event:any):void {
       event.preventDefault();
+      this.calendarKeypress = false;
+      console.log('stop shit here !');
       let d = (this.selectedDate.day === 0) ? this.today.getDate() : this.selectedDate.day;
       let m = (this.selectedDate.month === 0) ? this.today.getMonth() : this.selectedDate.month - 1;
       let y = (this.selectedDate.year === 0) ? this.today.getFullYear() : this.selectedDate.year;
