@@ -1,6 +1,6 @@
 .mydp {
     min-width: 100px;
-    border-radius: 2px;
+    border-radius: 0;
     line-height: 1.1;
     display: inline-block;
     position: relative;
@@ -21,7 +21,7 @@
     position: absolute;
     width: 262px;
     padding: 3px;
-    border-radius: 2px;
+    border-radius: 0;
     background-color: #FFF;
     z-index: 100;
 }
@@ -232,7 +232,7 @@
 
 .mydp .headertodaybtn {
     padding: 0 4px;
-    border-radius: 2px;
+    border-radius: 0;
     cursor: pointer;
     font-size: 11px;
     min-width: 60px;
@@ -301,7 +301,7 @@
     text-align: center;
     font-weight: bold;
     outline: none;
-    border-radius: 2px;
+    border-radius: 0;
 }
 
 .mydp .headerbtn span:hover {
