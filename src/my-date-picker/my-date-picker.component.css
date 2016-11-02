@@ -187,6 +187,9 @@
     -o-transform: rotate(15deg);
     transform: rotate(15deg);
 }
+.mydp .disabled div span.sundayDim:before {
+    color: red;
+}
 
 .mydp .sunday {
     color: #C30000;
