@@ -202,11 +202,11 @@
 
 .mydp .selectmenu {
     height: 24px;
-    width: 60px
+    width: 60px;
 }
 
 .mydp .headerbtn {
-    background-color: #FAFAFA;
+    background-color: #FFF;
     cursor: pointer;
     display: table-cell;
     vertical-align: middle;

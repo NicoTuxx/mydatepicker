@@ -144,7 +144,7 @@ export class MyDatePicker implements OnChanges {
             else {
                 this.invalidDate = true;
             }
-            this.checkDateInput(event);
+            // this.checkDateInput(event);
         }
     }
 
