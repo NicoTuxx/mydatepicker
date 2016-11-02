@@ -11,7 +11,11 @@ export class InputFocusDirective implements OnInit {
 
     ngOnInit() {
         // Sets focus to rendered input element (month or year value)
-        if (this.focusActive === true) {
+        this.invokeFocus();
+    }
+
+    invokeFocus() {
+      if (this.focusActive === true) {
           this.renderer.invokeElementMethod(this.el.nativeElement, 'focus', []);
         }
     }
