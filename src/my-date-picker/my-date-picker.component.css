@@ -178,14 +178,14 @@
 }
 
 .mydp .disabled div span:before {
-    content:"╱";
-    color:red;
-    position:absolute;
-    -webkit-transform:rotate(-5deg);
-    -moz-transform:rotate(-5deg);
-    -ms-transform:rotate(-5deg);
-    -o-transform:rotate(-5deg);
-    transform:rotate(-5deg);
+    content: "╱";
+    color: #ff8888;
+    position: absolute;
+    -webkit-transform: rotate(15deg);
+    -moz-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    -o-transform: rotate(15deg);
+    transform: rotate(15deg);
 }
 
 .mydp .sunday {
