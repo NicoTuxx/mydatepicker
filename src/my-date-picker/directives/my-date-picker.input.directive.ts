@@ -1,4 +1,4 @@
-import {Directive, ElementRef, Renderer, OnInit} from '@angular/core';
+import {Directive, ElementRef, Renderer, OnInit, Input} from '@angular/core';
 
 @Directive({
     selector: '[inputFocus]',
@@ -6,10 +6,13 @@ import {Directive, ElementRef, Renderer, OnInit} from '@angular/core';
 })
 
 export class InputFocusDirective implements OnInit {
+    @Input() focusActive: boolean = true;
     constructor(private el: ElementRef, private renderer: Renderer) {}
 
     ngOnInit() {
         // Sets focus to rendered input element (month or year value)
-        this.renderer.invokeElementMethod(this.el.nativeElement, 'focus', []);
+        if (this.focusActive === true) {
+          this.renderer.invokeElementMethod(this.el.nativeElement, 'focus', []);
+        }
     }
 }
