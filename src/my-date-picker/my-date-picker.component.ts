@@ -65,7 +65,6 @@ export class MyDatePicker implements OnChanges {
     minYear: number = 1000;
     maxYear: number = 9999;
     required: boolean = false;
-    openBtnFocus: boolean = false;
 
     constructor(public elem: ElementRef, private renderer: Renderer, private localeService: LocaleService, private validatorService: ValidatorService) {
         this.setLocaleOptions();
@@ -194,7 +193,6 @@ export class MyDatePicker implements OnChanges {
 
     calendarKeydown(event:any):void {
       event.preventDefault();
-      this.openBtnFocus = false;
 
       let d = (this.selectedDate.day === 0) ? this.today.getDate() : this.selectedDate.day;
       let m = (this.selectedDate.month === 0) ? this.today.getMonth() : this.selectedDate.month - 1;
@@ -206,11 +204,10 @@ export class MyDatePicker implements OnChanges {
       switch (event.code) {
         case 'Escape':
           this.openBtnClicked();
-          this.openBtnFocus = true;
+          console.log(this.elem);
           break;
         case 'Enter':
           this.selectDate({day: d, month: m + 1, year: y});
-          this.openBtnFocus = true;
           break;
         case 'ArrowLeft':
           mustRefresh = true;
