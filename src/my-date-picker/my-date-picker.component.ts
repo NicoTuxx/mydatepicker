@@ -204,10 +204,11 @@ export class MyDatePicker implements OnChanges {
       switch (event.code) {
         case 'Escape':
           this.openBtnClicked();
-          console.log(this.elem.nativeElement.querySelector('.btnpicker'));
+          this.elem.nativeElement.querySelector('.btnpicker').focus();
           break;
         case 'Enter':
           this.selectDate({day: d, month: m + 1, year: y});
+          this.elem.nativeElement.querySelector('.btnpicker').focus();
           break;
         case 'ArrowLeft':
           mustRefresh = true;
