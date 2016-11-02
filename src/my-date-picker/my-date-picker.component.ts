@@ -23,6 +23,7 @@ export class MyDatePicker implements OnChanges {
     @Input() defaultMonth:string;
     @Input() selDate:string;
     @Output() dateChanged:EventEmitter<Object> = new EventEmitter();
+    @Output() textChanged:EventEmitter<Object> = new EventEmitter();
 
     showSelector: boolean = false;
     visibleMonth: IMyMonth = {monthTxt: '', monthNbr: 0, year: 0};
@@ -31,7 +32,7 @@ export class MyDatePicker implements OnChanges {
     weekDays: Array<string> = [];
     dates: Array<Object> = [];
     selectionDayTxt: string = '';
-    @Output() invalidDate: boolean = false;
+    invalidDate: boolean = false;
     dayIdx: number = 0;
     today: Date = null;
 
@@ -146,6 +147,8 @@ export class MyDatePicker implements OnChanges {
             }
             // this.checkDateInput(event);
         }
+
+        this.textChanged.emit({invalidDate: this.invalidDate, text: this.selectionDayTxt});
     }
 
     checkDateInput(event:any):void {
