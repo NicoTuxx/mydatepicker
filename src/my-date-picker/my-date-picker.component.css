@@ -188,7 +188,7 @@
     transform: rotate(15deg);
 }
 .mydp .disabled div span.sundayDim:before {
-    color: #ffcccc;
+    color: #ff4444;
 }
 
 .mydp .sunday {
