@@ -31,7 +31,7 @@ export class MyDatePicker implements OnChanges {
     weekDays: Array<string> = [];
     dates: Array<Object> = [];
     selectionDayTxt: string = '';
-    invalidDate: boolean = false;
+    @Output() invalidDate: boolean = false;
     dayIdx: number = 0;
     today: Date = null;
 
