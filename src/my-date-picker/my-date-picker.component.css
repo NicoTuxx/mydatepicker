@@ -177,7 +177,7 @@
     background: #FFEFEB !important;
 }
 
-.mydp .disabled div:before {
+.mydp .disabled div span:before {
     content:"╱";
     display:block;
     color:red;
