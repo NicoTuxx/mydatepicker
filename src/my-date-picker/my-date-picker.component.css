@@ -178,7 +178,6 @@
 }
 
 .mydp .disabled:before {
-  position: absolute;
   content: "";
   left: 0;
   top: 50%;
