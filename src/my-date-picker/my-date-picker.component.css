@@ -177,8 +177,8 @@
     background: #FFEFEB !important;
 }
 
-.mydp .disabled:before {
-    content:"╱";   
+.mydp .disabled div:before {
+    content:"╱";
     display:block;
     color:red;
     font-size:2em;
