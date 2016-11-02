@@ -7,7 +7,7 @@
             <button type="button" class="btnclear" *ngIf="selectionDayTxt.length>0" (click)="removeBtnClicked()">
                 <span class="icon icon-cross" [ngStyle]="{'line-height': height}"></span>
             </button>
-            <button type="button" class="btnpicker" (click)="openBtnClicked()">
+            <button type="button" class="btnpicker" (click)="openBtnClicked()" [inputFocus]>
                 <span class="icon icon-calendar" [ngStyle]="{'line-height': height}"></span>
             </button>
         </span>
