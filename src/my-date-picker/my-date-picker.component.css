@@ -179,12 +179,13 @@
 
 .mydp .disabled div span:before {
     content:"╱";
-    display:block;
     color:red;
-    font-size:2em;
-    position:relative;
-    left:1em;
-    top:5px;
+    position:absolute;
+    -webkit-transform:rotate(-5deg);
+    -moz-transform:rotate(-5deg);
+    -ms-transform:rotate(-5deg);
+    -o-transform:rotate(-5deg);
+    transform:rotate(-5deg);
 }
 
 .mydp .sunday {
