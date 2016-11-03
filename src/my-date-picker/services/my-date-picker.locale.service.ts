@@ -25,7 +25,7 @@ export class LocaleService {
             dateFormat: 'dd/mm/yyyy',
             todayBtnTxt: 'Aujourd\'hui',
             firstDayOfWeek: 'mo',
-            sunHighlight: true,
+            sunHighlight: false,
         },
         'fi': {
             dayLabels: {su: 'Su', mo: 'Ma', tu: 'Ti', we: 'Ke', th: 'To', fr: 'Pe', sa: 'La'},
