@@ -101,6 +101,9 @@ export class MyDatePicker implements OnChanges {
             }
             else if(this.options && (this.options)[prop] !== undefined) {
                 (this)[prop] = (this.options)[prop];
+                console.log(prop);
+                console.log(this.options[prop]);
+                console.log((this)[prop]);
             }
         }
         if(this.minYear < 1000) {
@@ -109,7 +112,6 @@ export class MyDatePicker implements OnChanges {
         if(this.maxYear > 9999) {
             this.minYear = 9999;
         }
-        console.log(this);
     }
 
     resetMonthYearEdit():void {
