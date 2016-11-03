@@ -112,6 +112,7 @@ export class MyDatePicker implements OnChanges {
         if(this.maxYear > 9999) {
             this.minYear = 9999;
         }
+        console.log(this.sunHighlight);
     }
 
     resetMonthYearEdit():void {
