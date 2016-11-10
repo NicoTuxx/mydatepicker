@@ -96,7 +96,7 @@ export class MyDatePicker implements OnChanges {
     }
 
     setOptions():void {
-        let options = ['dayLabels', 'monthLabels', 'dateFormat', 'todayBtnTxt', 'firstDayOfWeek', 'sunHighlight', 'disableUntil', 'disableSince', 'disableWeekends', 'height', 'width', 'selectionTxtFontSize', 'inline', 'alignSelectorRight', 'indicateInvalidDate', 'showDateFormatPlaceholder', 'editableMonthAndYear', 'minYear', 'maxYear', 'required'];
+        let options = ['dayLabels', 'monthLabels', 'dateFormat', 'todayBtnTxt', 'firstDayOfWeek', 'sunHighlight', 'disableUntil', 'disableSince', 'disableWeekends', 'height', 'width', 'selectionTxtFontSize', 'inline', 'alignSelectorRight', 'indicateInvalidDate', 'showDateFormatPlaceholder', 'editableMonthAndYear', 'minYear', 'maxYear', 'required', 'title', 'accessibility'];
         for (let prop of options) {
             if (this.options && (this.options)[prop] !== undefined  && (this.options)[prop] instanceof Object) {
                 (this)[prop] = JSON.parse(JSON.stringify((this.options)[prop]));
