@@ -364,22 +364,20 @@
     content: "\e607";
 }
 
-.accessibility {
-  .caltable td {
+.accessibility .caltable td {
     background: #ccc !important;
     color: #404040 !important;
 
     .prevmonth, .nextmonth {
-      color: #404040 !important;
+        color: #404040 !important;
     }
+}
 
-    &.currmonth {
-      background: white !important;
-      color: #003366 !important;
-    }
+.accessibility .caltable td.currmonth {
+    background: white !important;
+    color: #003366 !important;
+}
 
-    &.disabled div span:before {
-      color: #404040 !important;
-    }
-  }
+.accessibility .caltable td.disabled div span:before {
+    color: #404040 !important;
 }
