@@ -5,11 +5,13 @@
                 (keyup)="userDateInput($event)" [value]="selectionDayTxt" (input)="selectionDayTxt = $event.target.value" [attr.required]="required === true ? 'required' : ''"
                 [attr.aria-invalid]="invalidDate && accessibility">
         <span class="selbtngroup">
-            <button type="button" class="btnclear" aria-label="Effacer la date" *ngIf="selectionDayTxt.length>0" (click)="removeBtnClicked()">
-                <span class="icon icon-cross" [ngStyle]="{'line-height': height}"></span>
+            <button type="button" class="btnclear" [attr.aria-label]="clearBtnTxt" *ngIf="selectionDayTxt.length>0" (click)="removeBtnClicked()">
+                <span class="sr-only" *ngIf="accessibility">{{clearBtnTxt}}</span>
+                <span class="icon icon-cross" [attr.aria-hidden]="accessibility" [ngStyle]="{'line-height': height}"></span>
             </button>
-            <button type="button" class="btnpicker" aria-label="Sélectionner la date" (click)="openBtnClicked()">
-                <span class="icon icon-calendar" [ngStyle]="{'line-height': height}"></span>
+            <button type="button" class="btnpicker" [attr.aria-label]="pickerBtnTxt" (click)="openBtnClicked()">
+                <span class="sr-only" *ngIf="accessibility">{{pickerBtnTxt}}</span>
+                <span class="icon icon-calendar" [attr.aria-hidden]="accessibility" [ngStyle]="{'line-height': height}"></span>
             </button>
         </span>
     </div>
