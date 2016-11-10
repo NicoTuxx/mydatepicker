@@ -198,6 +198,10 @@ export class MyDatePicker implements OnChanges {
         }
     }
 
+    pickerBtnFocus():void {
+      this.elem.nativeElement.querySelector('.btnpicker').focus();
+    }
+
     calendarKeydown(event:any):void {
       event.preventDefault();
 
@@ -211,11 +215,11 @@ export class MyDatePicker implements OnChanges {
       switch (event.code) {
         case 'Escape':
           this.openBtnClicked();
-          this.elem.nativeElement.querySelector('.btnpicker').focus();
+          this.pickerBtnFocus();
           break;
         case 'Enter':
           this.selectDate({day: d, month: m + 1, year: y});
-          this.elem.nativeElement.querySelector('.btnpicker').focus();
+          this.pickerBtnFocus();
           break;
         case 'ArrowLeft':
           mustRefresh = true;

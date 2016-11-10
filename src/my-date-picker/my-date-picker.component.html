@@ -5,7 +5,7 @@
                 (keyup)="userDateInput($event)" [value]="selectionDayTxt" (input)="selectionDayTxt = $event.target.value" [attr.required]="required === true ? 'required' : ''"
                 [attr.aria-invalid]="invalidDate && accessibility">
         <span class="selbtngroup">
-            <button type="button" class="btnclear" [attr.aria-label]="clearBtnTxt" *ngIf="selectionDayTxt.length>0" (click)="removeBtnClicked()">
+            <button type="button" class="btnclear" [attr.aria-label]="clearBtnTxt" *ngIf="selectionDayTxt.length>0" (click)="removeBtnClicked(); pickerBtnFocus()">
                 <span class="sr-only" *ngIf="accessibility">{{clearBtnTxt}}</span>
                 <span class="icon icon-cross" [attr.aria-hidden]="accessibility" [ngStyle]="{'line-height': height}"></span>
             </button>
