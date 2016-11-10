@@ -66,6 +66,7 @@ export class MyDatePicker implements OnChanges {
     minYear: number = 1000;
     maxYear: number = 9999;
     required: boolean = false;
+    title: string = 'Choose a date';
 
     constructor(public elem: ElementRef, private renderer: Renderer, private localeService: LocaleService, private validatorService: ValidatorService) {
         this.setLocaleOptions();

@@ -42,6 +42,7 @@
             </tr>
         </table>
         <table class="caltable">
+            <caption *ngIf="true">{{title}}</caption>
             <thead><tr><th *ngFor="let d of weekDays">{{d}}</th></tr></thead>
             <tbody (keydown)="calendarKeydown($event)" tabindex="-1" [inputFocus]>
             <tr *ngFor="let w of dates">
