@@ -367,10 +367,10 @@
 .accessibility .caltable td {
     background: #ccc !important;
     color: #404040 !important;
+}
 
-    .prevmonth, .nextmonth {
-        color: #404040 !important;
-    }
+.accessibility .caltable td .prevmonth, .accessibility .caltable td .nextmonth {
+    color: #404040 !important;
 }
 
 .accessibility .caltable td.currmonth {
