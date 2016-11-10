@@ -3,7 +3,7 @@
         <input type="text" class="selection" maxlength="10" [ngClass]="{'invaliddate': invalidDate&&indicateInvalidDate}" placeholder="{{showDateFormatPlaceholder?dateFormat:''}}"
                 [ngStyle]="{'height': height, 'line-height': height, 'font-size': selectionTxtFontSize, 'border': 'none', 'padding-right': selectionDayTxt.length>0 ? '60px' : '30px'}"
                 (keyup)="userDateInput($event)" [value]="selectionDayTxt" (input)="selectionDayTxt = $event.target.value" [attr.required]="required === true ? 'required' : ''"
-                [attr.aria-invalid]="invalidDate">
+                [attr.aria-invalid]="invalidDate && accessibility">
         <span class="selbtngroup">
             <button type="button" class="btnclear" aria-label="Effacer la date" *ngIf="selectionDayTxt.length>0" (click)="removeBtnClicked()">
                 <span class="icon icon-cross" [ngStyle]="{'line-height': height}"></span>
@@ -42,7 +42,7 @@
             </tr>
         </table>
         <table class="caltable">
-            <caption class="sr-only" *ngIf="true">{{title}}</caption>
+            <caption class="sr-only" *ngIf="accessibility">{{title}}</caption>
             <thead><tr><th *ngFor="let d of weekDays">{{d}}</th></tr></thead>
             <tbody (keydown)="calendarKeydown($event)" tabindex="-1" [inputFocus]>
             <tr *ngFor="let w of dates">
