@@ -48,7 +48,7 @@
             <thead><tr><th *ngFor="let d of weekDays" scope="col">{{d}}</th></tr></thead>
             <tbody (keydown)="calendarKeydown($event)" tabindex="-1" [inputFocus]>
             <tr *ngFor="let w of dates">
-                <td *ngFor="let d of w" [aria-label]="{{d.dateObj.day}}/{{d.dateObj | myDate:'month'}}/{{d.dateObj | myDate:'year'}}" (click)="!d.disabled && cellClicked(d);$event.stopPropagation()"
+                <td *ngFor="let d of w" [attr.aria-label]="{{d.dateObj.day}}/{{d.dateObj | myDate:'month'}}/{{d.dateObj | myDate:'year'}}" (click)="!d.disabled && cellClicked(d);$event.stopPropagation()"
                   [ngClass]="{'currmonth':d.cmo===CURR_MONTH&&!d.disabled, 'currday':d.currDay, 'selectedday':selectedDate.day===d.dateObj.day && selectedDate.month===d.dateObj.month && selectedDate.year===d.dateObj.year && d.cmo===CURR_MONTH, 'disabled': d.disabled, 'tablesingleday': d.cmo===CURR_MONTH&&!d.disabled}">
                     <div [ngClass]="{'prevmonth':d.cmo===PREV_MONTH,'currmonth':d.cmo===CURR_MONTH,'nextmonth':d.cmo===NEXT_MONTH,'sunday':d.dayNbr === 0 && sunHighlight}">
                         <span [ngClass]="{'sundayDim': sunHighlight && d.dayNbr === 0 && (d.cmo===PREV_MONTH || d.cmo===NEXT_MONTH || d.disabled)}">{{d.dateObj.day}}<span class="sr-only" *ngIf="accessibility">/{{d.dateObj | myDate:'month'}}/{{d.dateObj | myDate:'year'}}</span></span>
