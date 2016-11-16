@@ -7,6 +7,6 @@ import {MyDatePipe} from './pipes/my-date.pipe';
 @NgModule({
     imports: [ CommonModule ],
     declarations: [ MyDatePicker, InputFocusDirective, MyDatePipe ],
-    exports: [ MyDatePicker, InputFocusDirective ]
+    exports: [ MyDatePicker, InputFocusDirective, MyDatePipe ]
 })
 export class MyDatePickerModule { }
