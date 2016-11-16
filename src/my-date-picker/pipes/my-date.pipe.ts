@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class MyDatePipe implements PipeTransform {
   transform(date: {year: number, month: number, day: number}, type: string): number {
     let value: number;
-    console.log(date);
+
     switch (type) {
       case 'month':
         if (date.month === 0) {
