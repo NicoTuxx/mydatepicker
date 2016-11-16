@@ -535,7 +535,6 @@ export class MyDatePicker implements OnChanges {
             }
             this.dates.push(week);
         }
-        console.log(this.dates);
     }
 
     parseSelectedDate(ds:string): IMyDate {
