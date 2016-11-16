@@ -1,23 +1,24 @@
 {
   "name": "mydatepicker",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "Angular2 date picker",
   "keywords": [
     "Angular2",
     "datepicker",
     "date picker"
   ],
-  "author": "kekeh",
+  "author": "NicoTuxx",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kekeh/mydatepicker.git"
+    "url": "https://github.com/NicoTuxx/mydatepicker.git"
   },
   "files": [
     "LICENSE",
     "package.json",
     "README.md",
     "src/my-date-picker/directives",
+    "src/my-date-picker/pipes",
     "src/my-date-picker/interfaces",
     "src/my-date-picker/services",
     "src/my-date-picker/index.ts",
