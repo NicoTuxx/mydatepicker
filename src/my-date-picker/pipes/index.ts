@@ -1,2 +1,2 @@
 export * from './my-date.pipe';
-export * from './my-day-labels.pipe';
+export * from './my-day-label.pipe';
