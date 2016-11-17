@@ -6,20 +6,20 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class MyDayLabelPipe implements PipeTransform {
   transform(day: string): string {
     switch (day) {
-      case 'lun':
-        return 'lundi';
-      case 'mar':
-        return 'mardi';
-      case 'mer':
-        return 'mercredi';
-      case 'jeu':
-        return 'jeudi';
-      case 'ven':
-        return 'vendredi';
-      case 'sam':
-        return 'samedi';
-      case 'dim':
-        return 'dimanche';
+      case 'Lun':
+        return 'Lundi';
+      case 'Mar':
+        return 'Mardi';
+      case 'Mer':
+        return 'Mercredi';
+      case 'Jeu':
+        return 'Jeudi';
+      case 'Ven':
+        return 'Vendredi';
+      case 'Sam':
+        return 'Samedi';
+      case 'Dim':
+        return 'Dimanche';
     }
   }
 }
