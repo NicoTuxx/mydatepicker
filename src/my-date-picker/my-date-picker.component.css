@@ -177,18 +177,8 @@
     background: #FFEFEB !important;
 }
 
-.mydp .disabled div span:before {
-    content: "╱";
-    color: #ff8888;
-    position: absolute;
-    -webkit-transform: rotate(15deg);
-    -moz-transform: rotate(15deg);
-    -ms-transform: rotate(15deg);
-    -o-transform: rotate(15deg);
-    transform: rotate(15deg);
-}
-.mydp .disabled div span.sundayDim:before {
-    color: #ff4444;
+.mydp .disabled div {
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'><line fill='none' x1='50' y1='0' x2='0' y2='50' style='stroke:grey; stroke-width:5' /></svg>") no-repeat scroll 0 0 / 100% 100% transparent;
 }
 
 .mydp .sunday {
