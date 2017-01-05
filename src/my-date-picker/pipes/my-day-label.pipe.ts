@@ -20,6 +20,8 @@ export class MyDayLabelPipe implements PipeTransform {
         return 'Samedi';
       case 'Dim':
         return 'Dimanche';
+      default:
+        return '';
     }
   }
 }
