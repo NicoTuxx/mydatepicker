@@ -75,7 +75,7 @@ export class MyDatePicker implements OnChanges {
         this.setLocaleOptions();
 
         this.today = new Date();
-        renderer.listenGlobal('document', 'click', (event:any) => {
+        this.renderer.listenGlobal('document', 'click', (event:any) => {
             if (this.showSelector && event.target && this.elem.nativeElement !== event.target && !this.elem.nativeElement.contains(event.target)) {
                 this.showSelector = false;
             }
