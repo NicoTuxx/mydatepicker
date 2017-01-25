@@ -372,9 +372,15 @@
     color: #404040 !important;
 }
 
-input:required {
+input {
     box-shadow:none;
 }
+
+input:-moz-placeholder,
+input:focus {
+    box-shadow:none !important;
+}
+
 input:invalid {
-    box-shadow:0 0 3px red;
+    box-shadow:0 0 2px 1px red;
 }
