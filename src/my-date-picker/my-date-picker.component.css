@@ -372,15 +372,15 @@
     color: #404040 !important;
 }
 
-input {
-    box-shadow:none;
+.mydp input {
+    box-shadow: none;
 }
 
-input:-moz-placeholder,
-input:focus {
-    box-shadow:none !important;
+.mydp input:-moz-placeholder,
+.mydp input:focus {
+    box-shadow: none !important;
 }
 
-input:invalid {
-    box-shadow:0 0 2px 1px red;
+.mydp input:invalid {
+    box-shadow: none;
 }
