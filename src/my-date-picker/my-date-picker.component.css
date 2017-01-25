@@ -371,3 +371,7 @@
 .accessibility .caltable td.disabled div span:before {
     color: #404040 !important;
 }
+
+.mydp input:required:not(:focus) {
+    box-shadow: none;
+}
