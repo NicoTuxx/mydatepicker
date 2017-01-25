@@ -371,3 +371,10 @@
 .accessibility .caltable td.disabled div span:before {
     color: #404040 !important;
 }
+
+input:required {
+    box-shadow:none;
+}
+input:invalid {
+    box-shadow:0 0 3px red;
+}
