@@ -1,37 +1,26 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import {LocaleService} from '../services/my-date-picker.locale.service';
+import {LongLabelService} from '../services/my-date-picker.long-label.service';
 
 @Pipe({
   name: 'myMonthLabel'
 })
 export class MyMonthLabelPipe implements PipeTransform {
-  transform(month: number): string {
-    switch (month) {
-      case 1:
-        return 'Janvier';
-      case 2:
-        return 'Février';
-      case 3:
-        return 'Mars';
-      case 4:
-        return 'Avril';
-      case 5:
-        return 'Mai';
-      case 6:
-        return 'Juin';
-      case 7:
-        return 'Juillet';
-      case 8:
-        return 'Août';
-      case 9:
-        return 'Septembre';
-      case 10:
-        return 'Octobre';
-      case 11:
-        return 'Novembre';
-      case 12:
-        return 'Décembre';
-      default:
-        return '';
-    }
+  constructor(
+    private longLabelService: LongLabelService,
+    private localeService: LocaleService) {
+  }
+
+  transform(month: number, locale: string): string {
+    let lang = (locale !== undefined) ? locale : 'en';
+    let longLabels = this.longLabelService.getLongLabels(lang);
+    let options = this.localeService.getLocaleOptions(lang);
+
+    let monthLabels = Object.keys(options['monthLabels']).reduce((obj, key) => {
+      obj[options['monthLabels'][key]] = key;
+      return obj;
+    }, {});
+
+    return longLabels['monthLabels'][monthLabels[month]];
   }
 }

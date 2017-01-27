@@ -9,7 +9,6 @@ export class MyDayLabelPipe implements PipeTransform {
   constructor(
     private longLabelService: LongLabelService,
     private localeService: LocaleService) {
-
   }
 
   transform(day: string, locale: string): string {
@@ -19,11 +18,6 @@ export class MyDayLabelPipe implements PipeTransform {
 
     let dayLabels = Object.keys(options['dayLabels']).reduce((obj, key) => {
       obj[options['dayLabels'][key]] = key;
-      return obj;
-    }, {});
-
-    let monthLabels = Object.keys(options['monthLabels']).reduce((obj, key) => {
-      obj[options['monthLabels'][key]] = key;
       return obj;
     }, {});
 
