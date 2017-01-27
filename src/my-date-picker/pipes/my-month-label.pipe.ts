@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {LocaleService} from '../services/my-date-picker.locale.service';
 import {LongLabelService} from '../services/my-date-picker.long-label.service';
 
 @Pipe({
@@ -7,22 +6,13 @@ import {LongLabelService} from '../services/my-date-picker.long-label.service';
 })
 export class MyMonthLabelPipe implements PipeTransform {
   constructor(
-    private longLabelService: LongLabelService,
-    private localeService: LocaleService) {
+    private longLabelService: LongLabelService) {
   }
 
   transform(month: number, locale: string): string {
     let lang = (locale !== undefined) ? locale : 'en';
     let longLabels = this.longLabelService.getLongLabels(lang);
-    let options = this.localeService.getLocaleOptions(lang);
 
-    let monthLabels = options['monthLabels'];
-
-    console.log(longLabels['monthLabels']);
-    console.log(monthLabels[month]);
-    console.log(monthLabels);
-    console.log(month);
-
-    return longLabels['monthLabels'][monthLabels[month]];
+    return longLabels['monthLabels'][month];
   }
 }
