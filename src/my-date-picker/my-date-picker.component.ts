@@ -2,6 +2,7 @@ import {Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, Elemen
 import {IMyDate, IMyMonth, IMyWeek, IMyDayLabels, IMyMonthLabels} from './interfaces/index';
 import {LocaleService} from './services/my-date-picker.locale.service';
 import {ValidatorService} from './services/my-date-picker.validator.service';
+import {LongLabelService} from './services/my-date-picker.long-label.service';
 
 //webpack1_
 declare var require: any;
