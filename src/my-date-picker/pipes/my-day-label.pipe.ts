@@ -16,8 +16,14 @@ export class MyDayLabelPipe implements PipeTransform {
     let lang = (locale !== undefined) ? locale : 'en';
     let longLabels = this.longLabelService.getLongLabels(lang);
     let options = this.localeService.getLocaleOptions(lang);
-    let dayLabels = Object.keys(options['dayLabels']);
-    let monthLabels = Object.keys(options['monthLabels']);
+    let dayLabels = Object.keys(options['dayLabels']).reduce((obj, key) => {
+      obj[options['dayLabels'][key]] = key;
+      return obj;
+    }, {});
+    let monthLabels = Object.keys(options['monthLabels']).reduce((obj, key) => {
+      obj[options['monthLabels'][key]] = key;
+      return obj;
+    }, {});
     console.log(longLabels);
     console.log(dayLabels);
     console.log(monthLabels);
