@@ -9,9 +9,9 @@ export class MyDayLabelPipe implements PipeTransform {
 
   }
 
-  transform(day: string): string {
+  transform(day: string, locale: string): string {
+    console.log(locale);
     let longLabels = this.longLabelService.getLongLabels('fr');
-    console.log(longLabels);
 
     switch (day) {
       case 'Lun':

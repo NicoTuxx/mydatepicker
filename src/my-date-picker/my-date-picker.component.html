@@ -48,7 +48,7 @@
             <thead role="presentation">
               <tr role="row">
                 <th *ngFor="let d of weekDays" scope="col" role="columnheader" [attr.aria-label]="d | myDayLabel">
-                  {{d}}<span class="sr-only">{{(d | myDayLabel).replace(d, '')}}</span>
+                  {{d}}<span class="sr-only">{{(d | myDayLabel:locale).replace(d, '')}}</span>
                 </th>
               </tr>
             </thead>
