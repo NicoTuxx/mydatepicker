@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {LocaleService} from './services/my-date-picker.locale.service';
+import {LocaleService} from '../services/my-date-picker.locale.service';
 import {LongLabelService} from '../services/my-date-picker.long-label.service';
 
 @Pipe({
