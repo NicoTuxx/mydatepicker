@@ -16,8 +16,11 @@ export class MyDayLabelPipe implements PipeTransform {
     let lang = (locale !== undefined) ? locale : 'en';
     let longLabels = this.longLabelService.getLongLabels(lang);
     let options = this.localeService.getLocaleOptions(lang);
+    let dayLabels = options['dayLabels'];
+    let monthLabels = options['monthLabels'];
     console.log(longLabels);
-    console.log(options);
+    console.log(dayLabels);
+    console.log(monthLabels);
 
     switch (day) {
       case 'Lun':
