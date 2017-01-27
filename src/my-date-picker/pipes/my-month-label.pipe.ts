@@ -16,10 +16,7 @@ export class MyMonthLabelPipe implements PipeTransform {
     let longLabels = this.longLabelService.getLongLabels(lang);
     let options = this.localeService.getLocaleOptions(lang);
 
-    let monthLabels = Object.keys(options['monthLabels']).reduce((obj, key) => {
-      obj[options['monthLabels'][key]] = key;
-      return obj;
-    }, {});
+    let monthLabels = options['monthLabels'];
 
     console.log(longLabels['monthLabels']);
     console.log(monthLabels[month]);
