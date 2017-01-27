@@ -1,10 +1,18 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import {LongLabelService} from '../services/my-date-picker.long-label.service';
 
 @Pipe({
   name: 'myDayLabel'
 })
 export class MyDayLabelPipe implements PipeTransform {
+  constructor(private longLabelService: LongLabelService) {
+
+  }
+
   transform(day: string): string {
+    let longLabels = this.longLabelService.getLongLabels('fr');
+    console.log(longLabels);
+
     switch (day) {
       case 'Lun':
         return 'Lundi';
