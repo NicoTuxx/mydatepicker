@@ -21,6 +21,10 @@ export class MyMonthLabelPipe implements PipeTransform {
       return obj;
     }, {});
 
+    console.log(longLabels['monthLabels']);
+    console.log(monthLabels);
+    console.log(month);
+
     return longLabels['monthLabels'][monthLabels[month]];
   }
 }
