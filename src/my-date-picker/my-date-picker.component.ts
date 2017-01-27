@@ -14,7 +14,7 @@ const myDpTpl: string = require('./my-date-picker.component.html');
     selector: 'my-date-picker',
     styles: [myDpStyles],
     template: myDpTpl,
-    providers: [LocaleService, ValidatorService],
+    providers: [LocaleService, ValidatorService, LongLabelService],
     encapsulation: ViewEncapsulation.None
 })
 
